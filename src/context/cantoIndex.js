@@ -311,16 +311,13 @@ function formatCantos(text, size) {
     let sizedArr = secondRun.slice(0, size)
     let finalArr = [];
 
-    if(size === 1) {
-     let values = secondRun.section.split("-")
-     return displayIndexSection(values[0], values[1]).join("") // changed from values[1]).join("/n") to remove line after each section
-     } else { 
+    
     sizedArr.map(({ section }) => {
       let values = section.split("-");
       finalArr = [...finalArr, displayIndexSection(values[0], values[1])];
       return finalArr;
     });
-  }
+  
 
      output = finalArr.join("");
 
