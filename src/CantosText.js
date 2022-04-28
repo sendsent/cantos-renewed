@@ -2,6 +2,7 @@ import "./App.css";
 import React, { useEffect, useContext, useState, useRef } from "react";
 import { DispatchContext, StateContext } from "./context/cantosReducer";
 import { Context } from "./context/ContextState";
+import TextareaAutosize from 'react-textarea-autosize';
 
 
 function CantosText() {
@@ -116,68 +117,68 @@ const preventPasteNegative = (e) => {
 
   return (
     <div className="App responsive">
-          <table className="center">
-
-    <div className="textstuff">
-    <tr>
-    <td colspan={2}>
-    <img src="https://images-na.ssl-images-amazon.com/images/I/41S5Q3AE70L.jpg"/>
-    <i>The Totality Cantos</i><br/>
-    Brian Ang<br/>
-    Atelos, 2021<br/>
-    <br/>
-    <a href="">pdf</a> <a href="">print</a><br/>
-    <br/>
-    The 2008 economic crisis and global backdrop of struggles by 2011 renewed possibilities for thinking totality, materializing it for apprehension. I wrote <i>The Totality Cantos</i> from the desire to be interested in everything, sampling from discourses of history, philosophy, religion, science, and the humanities, knowledges of what constitute totality. Assemblage poetics, constructive verse, writing adequate to apprehending totality.<br/>
-    <br/>
-    <i>The Totality Cantos</i> is Brian Ang’s first book. totalitycantos@gmail.com<br/>
-    <br/>
-    <i>The Totality Cantos</i> generator randomizes assemblages of the poem’s one thousand sections. Programming by Alif Aleph Sajan & Franz Fernando.<br/>
-  </td>
-</tr>
-</div>
-<tr>
-    <td colspan={2}>
-    <p>
-    
-    <p class="textstuff">Generate random number of sections in range (1-1000)</p>
-    <button id="submit" disabled={isSubmitted} onClick={() => onClick()}>
-            generate{" "}
-          </button>
-          <button id="clear" disabled={!isSubmitted} onClick={() => onClear()}>
-            reset
-          </button>
-
-          <input
-            placeholder="0"
-            ref={inputRef}
-            type="number"
-            id="number"
-            min="1"
-            step="1"
-            value={input && Math.max(0, input)}
-            onChange={(e) => onChange(e)}
-            disabled={isSubmitted}
-            onKeyPress={(e) => preventMinus(e)}
-            onPaste={(e) => preventPasteNegative(e)}
-          />
-
-  </p>
-    </td>
-    </tr>
-    </table>
-      
-      <div className="generatedouter" >
+      <div className="outerContainer">
+      <div className="container">
+        <table className="center">
+          <div className="textstuff">
+            <tr>
+              <td colspan={2}>
+                <img src="https://images-na.ssl-images-amazon.com/images/I/41S5Q3AE70L.jpg"/>
+                  <i>The Totality Cantos</i><br/>
+                    Brian Ang<br/>
+                    Atelos, 2021<br/>
+                      <br/>
+                      <a href="">pdf</a> <a href="">print</a><br/>
+                      <br/>
+                        The 2008 economic crisis and global backdrop of struggles by 2011 renewed possibilities for thinking totality, materializing it for apprehension. I wrote <i>The Totality Cantos</i> from the desire to be interested in everything, sampling from discourses of history, philosophy, religion, science, and the humanities, knowledges of what constitute totality. Assemblage poetics, constructive verse, writing adequate to apprehending totality.<br/>
+                      <br/>
+                        <i>The Totality Cantos</i> is Brian Ang’s first book. totalitycantos@gmail.com<br/>
+                      <br/>
+                        <i>The Totality Cantos</i> generator randomizes assemblages of the poem’s one thousand sections. Programming by Alif Aleph Sajan & Franz Fernando.<br/>
+              </td>
+            </tr>
+          </div>
+            <tr>
+              <td colspan={2}>
+                <p>
+                  <p class="textstuff">Generate random number of sections in range (1-1000)</p>
+                    <button id="submit" disabled={isSubmitted} onClick={() => onClick()}>
+                      generate{" "}
+                    </button>
+                    <button id="clear" disabled={!isSubmitted} onClick={() => onClear()}>
+                      reset
+                    </button>
+                    <input
+                      placeholder="0"
+                      ref={inputRef}
+                      type="number"
+                      id="number"
+                      min="1"
+                      step="1"
+                      value={input && Math.max(0, input)}
+                      onChange={(e) => onChange(e)}
+                      disabled={isSubmitted}
+                      onKeyPress={(e) => preventMinus(e)}
+                      onPaste={(e) => preventPasteNegative(e)}
+                    />
+              </p>
+          </td>
+        </tr>
+      </table>
+      </div>
+      </div>
+      <div id="textinput" className="generated">
         {displayText && (
-          <textarea
-            className="generated"
+          <TextareaAutosize
+            // className="generated"
             id="textinput"
-            rows="13"
-            cols="120"
+            rows="15"
+            // cols="120"
             value={displayText}
-          ></textarea>
+          />
         )}
       </div>
+      
     </div>
   );
 }
