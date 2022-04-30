@@ -47,6 +47,7 @@ function CantosText() {
       "-",
       "+",
       "e",
+      "."
     ];
     if (invalidChars.includes(e.key)) {
         e.preventDefault();
