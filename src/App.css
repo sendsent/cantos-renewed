@@ -16,11 +16,19 @@
 }
 .tableContainer {
   display: inline-flex;
-    align-content: flex-start;
+    justify-content: flex-start;
     flex-wrap: nowrap;
     flex-direction: row;
-    align-items: stretch;
+    align-items: flex-start;
 
+}
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+    position: relative;
 }
 .buttons {
   margin-top: 1rem;
@@ -32,12 +40,12 @@
 }
 
 table.center {
+  display: flex;
   margin-left: auto;
   margin-right: auto;
   padding: 0;
   border-spacing: 0;
-  min-width: 35rem;
-  max-width: 75rem;
+  
 }
  img {
   float: left;
@@ -76,6 +84,9 @@ input {
 }
 
 @media only screen and (min-width: 200px) and (max-width: 312px) {
+  img {
+    width: 15%
+  }
   
   .textstuff {
     font-size: xx-small; 
@@ -96,10 +107,10 @@ input {
   }
 }
 
-@media only screen  and (min-width: 312px) and (max-width: 548px ) {
+@media only screen  and (min-width: 312px) and (max-width: 768px ) {
   
   .textstuff {
-    font-size: xx-small; 
+    font-size: small; 
   }
   
   .textinput {
@@ -122,6 +133,9 @@ input {
   .textstuff {
     font-size: medium;
   }
+  .intro {
+    font-size: small;
+  }
   input {
     width: 3.5rem
   }
@@ -138,7 +152,7 @@ input {
   .textinput {
     font-size: 5mm;
   }
-  .img {
+  img {
     width: 35%;
   }
 }

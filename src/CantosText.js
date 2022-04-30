@@ -112,17 +112,23 @@ const preventPasteNegative = (e) => {
           <div className="textstuff">
             <tr>
               <td colspan={2}>
+              <div className="info" >
+                <div className="author">
                 <i>The Totality Cantos</i><br/>
                   Brian Ang<br/>
                   Atelos, 2021<br/>
                     <br/>
                     <a href="">pdf</a> <a href="">print</a><br/>
                     <br/>
+                </div>
+                <div className="intro">
                       The 2008 economic crisis and global backdrop of struggles by 2011 renewed possibilities for thinking totality, materializing it for apprehension. I wrote <i>The Totality Cantos</i> from the desire to be interested in everything, sampling from discourses of history, philosophy, religion, science, and the humanities, knowledges of what constitute totality. Assemblage poetics, constructive verse, writing adequate to apprehending totality.<br/>
                     <br/>
-                      <i>The Totality Cantos</i> is Brian Ang’s first book. totalitycantos@gmail.com<br/>
                     <br/>
+                      <i>The Totality Cantos</i> is Brian Ang’s first book. totalitycantos@gmail.com<br/>
                   <i>The Totality Cantos</i> generator randomizes assemblages of the poem’s one thousand sections. Programming by Alif Aleph Sajan & Franz Fernando.<br/>
+                </div>
+                </div>
               </td>
             </tr>
           </div>
