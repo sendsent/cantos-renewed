@@ -63,10 +63,22 @@ function CantosText() {
 }
  
   const preventMinus = (e) => {
-    if (e.code === 'Minus' || e.target.value === 0) {
-        e.preventDefault();
-    }
-};
+      const invalidChars = [
+        "-",
+        "+",
+        "e",
+        "0"
+      ];
+
+      if (invalidChars.includes(e.key)) {
+          e.preventDefault();
+        }
+      
+      if (e.code === 'Minus' ) {
+          e.preventDefault();
+      }
+  };
+
 const preventPasteNegative = (e) => {
   const clipboardData = e.clipboardData || window.clipboardData;
   const pastedData = parseFloat(clipboardData.getData('text'));
