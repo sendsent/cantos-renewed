@@ -1,23 +1,26 @@
 .App {
- 
-  
   white-space: pre-wrap;
 }
 
-.responsive {
-  margin-top: 1rem;
-  max-width: 2560px;
-  width: auto;
-  height: auto;
-  margin-right: 10px;
-}
 .innerContainer {
-  width: auto;
+  display: inline-flex;
+    width: auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    padding-left: 1rem;
 }
 .outerContainer {
-  /* display: flex;
-  flex-direction: column; */
+ 
   position: relative;
+}
+.tableContainer {
+  display: inline-flex;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: stretch;
+
 }
 .buttons {
   margin-top: 1rem;
@@ -33,7 +36,8 @@ table.center {
   margin-right: auto;
   padding: 0;
   border-spacing: 0;
-  width: 75rem;
+  min-width: 35rem;
+  max-width: 75rem;
 }
  img {
   float: left;
@@ -56,19 +60,9 @@ input {
   color: rgb(0, 0, 0);
   margin-left: 5px;
   font-family: "Times";
-  font-size: 19px;
+  font-size: large;
  }
 
- .generatedouter {
-  margin-left: 10.5rem;
-  height: auto;
-  width: auto;
-}
-
-.generated {
-  height: auto;
-  width: auto;
-}
 
 .textinput {
   border: none;
@@ -77,40 +71,15 @@ input {
   height: auto;
   max-height: 270000px;
   font-family: "Times";
-  /* position: absolute; */
   overflow: hidden;
 
 }
 
 @media only screen and (min-width: 200px) and (max-width: 312px) {
-  .innerContainer {
-    display: flex;  
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
+  
   .textstuff {
-font-size: 1ch; 
-display: flex;
-}
-
-  .generated {
-    padding-left: 10px;
-    width: auto
-  }
-
-  .generatedouter {
-    margin-left: 1rem;
-    width: 100%;
-  }
-
-  .responsive {
-    width: auto;
-    /* display: flex; */
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: flex-start;
-  }
+    font-size: xx-small; 
+} 
   .textinput {
     display: flex;
     flex: none;
@@ -119,42 +88,20 @@ display: flex;
   .buttons {
     display: flex;
   }
-button, input {
-  font-size: 1ch;
+  button, input {
+    font-size: 1ch;
+  }
+  input {
+    width: 1.5rem;
+  }
 }
-input {
-  width: 1.5rem;
-}
-}
+
 @media only screen  and (min-width: 312px) and (max-width: 548px ) {
-  .innerContainer {
-    display: flex;  
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
+  
   .textstuff {
-font-size: 1ch; 
-display: flex;
-}
-
-  .generated {
-    padding-left: 10px;
-    width: auto
+    font-size: xx-small; 
   }
-
-  .generatedouter {
-    margin-left: 1rem;
-    width: 100%;
-  }
-
-  .responsive {
-    width: auto;
-    /* display: flex; */
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: flex-start;
-  }
+  
   .textinput {
     display: flex;
     font-size: .75ch;
@@ -162,81 +109,36 @@ display: flex;
   .buttons {
     display: flex;
   }
-button, input {
-  font-size: 1ch;
-}
-input {
-  width: 1.5rem;
-}
+  button, input {
+    font-size: 1ch;
+  }
+  input {
+    width: 1.5rem;
+  }
   
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px){
   
-  
-
-  
-  
-  .generatedouter {
-    height: auto;
-    width: auto;
-  }
-  .generated {
-    padding-left: 40;
-    height: auto;
-    width: auto;
+  .textstuff {
+    font-size: medium;
   }
   input {
     width: 3.5rem
   }
 }
+
 @media screen and (min-width: 1440px) and (max-width: 2560px) {
   .outerContainer {
     margin-top: 1rem;
     margin-left: 1rem;
   }
- .responsive {
-   width: 90rem;
- }
-  
-  table.center {
-    width: 77rem;
-  }
-  .textstuff {
-    font-size: 23px;
-    width: 90rem;
-  }
+.textstuff {
+  font-size: larger;
+}
   .textinput {
     font-size: 5mm;
   }
-}
-@media screen and (min-width: 2560px) {
-  
-  .textstuff {
-    font-size: 41px;
-    width: 155rem;
-  }
-  table.center {
-    width: 80rem;
-  }
-  .textinput {
-    margin-top: 1rem;
-    font-size: 35px;
-    width: 113rem;
-  }
-  button, input {
-    font-size: 25px;
-  }
-  img {
-    float: left;
-    padding-top: 0px;
-    padding-right: 10px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    width: 30%;
-  }
-  input {
-    width: 4.5rem
+  .img {
+    width: 35%;
   }
 }
-
- 
