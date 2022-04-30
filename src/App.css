@@ -35,7 +35,6 @@ table.center {
   border-spacing: 0;
   width: 75rem;
 }
-
  img {
   float: left;
   padding-top: 0px;
@@ -78,10 +77,12 @@ input {
   height: auto;
   max-height: 270000px;
   font-family: "Times";
+  /* position: absolute; */
   overflow: hidden;
+
 }
 
-@media only screen  and (min-width: 240px) and (max-width: 548px ) {
+@media only screen and (min-width: 200px) and (max-width: 312px) {
   .innerContainer {
     display: flex;  
     flex-direction: row;
@@ -104,6 +105,7 @@ display: flex;
 
   .responsive {
     width: auto;
+    /* display: flex; */
     flex-direction: row;
     flex-wrap: wrap;
     align-content: center;
@@ -111,19 +113,69 @@ display: flex;
   }
   .textinput {
     display: flex;
+    flex: none;
+    font-size: .5ch;
   }
   .buttons {
     display: flex;
   }
-  button, input {
+button, input {
   font-size: 1ch;
 }
-  input {
+input {
   width: 1.5rem;
-}  
+}
+}
+@media only screen  and (min-width: 312px) and (max-width: 548px ) {
+  .innerContainer {
+    display: flex;  
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .textstuff {
+font-size: 1ch; 
+display: flex;
 }
 
+  .generated {
+    padding-left: 10px;
+    width: auto
+  }
+
+  .generatedouter {
+    margin-left: 1rem;
+    width: 100%;
+  }
+
+  .responsive {
+    width: auto;
+    /* display: flex; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+  }
+  .textinput {
+    display: flex;
+    font-size: .75ch;
+  }
+  .buttons {
+    display: flex;
+  }
+button, input {
+  font-size: 1ch;
+}
+input {
+  width: 1.5rem;
+}
+  
+}
 @media only screen and (min-width: 768px) and (max-width: 1024px){
+  
+  
+
+  
+  
   .generatedouter {
     height: auto;
     width: auto;
@@ -137,7 +189,7 @@ display: flex;
     width: 3.5rem
   }
 }
-@media only screen and (min-width: 1440px) and (max-width: 2560px) {
+@media screen and (min-width: 1440px) and (max-width: 2560px) {
   .outerContainer {
     margin-top: 1rem;
     margin-left: 1rem;
@@ -157,7 +209,7 @@ display: flex;
     font-size: 5mm;
   }
 }
-@media only screen and (min-width: 2560px) {
+@media screen and (min-width: 2560px) {
   
   .textstuff {
     font-size: 41px;
