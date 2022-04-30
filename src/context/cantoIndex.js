@@ -103,7 +103,7 @@ function formatCantos(text, size) {
   //display the canto number and section using the function above
   const displayIndexSection = (cantoNumber, cantoSection) => {
     return (
-      `[${cantoNumber}-${cantoSection}]` +
+      `${cantoNumber}-${cantoSection}` +
       getCantoSection(cantoNumber, cantoSection)
     );
   };

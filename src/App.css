@@ -1,35 +1,29 @@
 .App {
-  /* text-align: center; */
+ 
+  
   white-space: pre-wrap;
 }
-.generated {
-  padding-top: 20
-}
-@media screen and (min-width: 320px ) and (max-width: 768px ) {
-  .generated {
-    padding-left: 40px;
 
-  }
-  .generatedouter {
-    margin-left: 4rem
-  }
-  #textinput {
-    margin-left: 20px
-
-  }
-}
-@media screen and (min-width: 1024px) {
-  .generatedouter {
-    margin-left: 14.5rem
-  }
-  .generated {
-    padding-left: 70;
-  }
-}
 .responsive {
-  max-width: 75%;
+  margin-top: 1rem;
+  max-width: 2560px;
+  width: auto;
   height: auto;
+  margin-right: 10px;
 }
+.innerContainer {
+  width: auto;
+}
+.outerContainer {
+  /* display: flex;
+  flex-direction: column; */
+  position: relative;
+}
+.buttons {
+  margin-top: 1rem;
+  
+}
+
 .invisible {
   display: none;
 }
@@ -39,12 +33,8 @@ table.center {
   margin-right: auto;
   padding: 0;
   border-spacing: 0;
-  width: 53rem;
+  width: 75rem;
 }
-/*.regular {
-  color: rgb(218, 60, 100);
-  
-}*/
 
  img {
   float: left;
@@ -52,39 +42,149 @@ table.center {
   padding-right: 10px;
   padding-bottom: 0px;
   padding-left: 0px;
-  width: 25%;
+  width: 20%;
 }
 
-/* .file {
-  margin-top: 24px;
-  font-weight: bold;
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
-*/
-#number {
-  width: 55px;
-}  
-
-/*.text {
-  border-style: solid;
-  border-width: 1px;
-  padding: 20px;
-  font-size: 16px;
+input {
+  width: 2.5rem;
 }
-*/
-
 .textstuff {
   color: rgb(0, 0, 0);
   margin-left: 5px;
   font-family: "Times";
-  padding-top: 5px;
-  font-size: 16px;
-  /*overflow: scroll;*/
-  /*font-family: "Times", Times, serif;*/
-
+  font-size: 19px;
  }
 
- #textinput {
-   width: 65vw;
-   margin-left: 165px;
-   font-family: "Times";
+ .generatedouter {
+  margin-left: 10.5rem;
+  height: auto;
+  width: auto;
+}
+
+.generated {
+  height: auto;
+  width: auto;
+}
+
+.textinput {
+  border: none;
+  width: 65rem;
+  min-height: 2300px;
+  height: auto;
+  max-height: 270000px;
+  font-family: "Times";
+  overflow: hidden;
+}
+
+@media only screen  and (min-width: 240px) and (max-width: 548px ) {
+  .innerContainer {
+    display: flex;  
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .textstuff {
+font-size: 1ch; 
+display: flex;
+}
+
+  .generated {
+    padding-left: 10px;
+    width: auto
+  }
+
+  .generatedouter {
+    margin-left: 1rem;
+    width: 100%;
+  }
+
+  .responsive {
+    width: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+  }
+  .textinput {
+    display: flex;
+  }
+  .buttons {
+    display: flex;
+  }
+  button, input {
+  font-size: 1ch;
+}
+  input {
+  width: 1.5rem;
+}  
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+  .generatedouter {
+    height: auto;
+    width: auto;
+  }
+  .generated {
+    padding-left: 40;
+    height: auto;
+    width: auto;
+  }
+  input {
+    width: 3.5rem
+  }
+}
+@media only screen and (min-width: 1440px) and (max-width: 2560px) {
+  .outerContainer {
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+ .responsive {
+   width: 90rem;
  }
+  
+  table.center {
+    width: 77rem;
+  }
+  .textstuff {
+    font-size: 23px;
+    width: 90rem;
+  }
+  .textinput {
+    font-size: 5mm;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  
+  .textstuff {
+    font-size: 41px;
+    width: 155rem;
+  }
+  table.center {
+    width: 80rem;
+  }
+  .textinput {
+    margin-top: 1rem;
+    font-size: 35px;
+    width: 113rem;
+  }
+  button, input {
+    font-size: 25px;
+  }
+  img {
+    float: left;
+    padding-top: 0px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    width: 30%;
+  }
+  input {
+    width: 4.5rem
+  }
+}
+
+ 

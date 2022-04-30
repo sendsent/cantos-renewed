@@ -11,7 +11,7 @@ function CantosText() {
   const { cantosText, cantosIndex, cantoStore } = state;
   const dispatch = useContext(DispatchContext);
   const [cantos, setCantos] = useState();
-  const [input, setInput] = useState(0);
+  const [input, setInput] = useState();
   const [isClear, setIsClear] = useState(true);
   const [displayText, setDisplayText] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -77,8 +77,8 @@ const preventPasteNegative = (e) => {
 };
 
   const onChange = (e) => {
-   
-    setInput(e.target.value ? Number(e.target.value) : e.target.value);
+    const strNumber = e.target.value;
+    setInput(e.target.value ? Number(e.target.value) : e.target.value.replace(/^0+/, ''));
     setIsClear(false);
   };
 
@@ -106,7 +106,7 @@ const preventPasteNegative = (e) => {
   useEffect(() => {
     if (isClear) {
       inputRef.current.focus();
-    }
+    } 
   }, [isClear]);
 
   useEffect(() => {
@@ -116,9 +116,9 @@ const preventPasteNegative = (e) => {
   }, [cantoStore]);
 
   return (
-    <div className="App responsive">
-      <div className="outerContainer">
-      <div className="container">
+    <div className="App outerContainer">
+      <div className="responsive">
+      <div className="innerContainer">
         <table className="center">
           <div className="textstuff">
             <tr>
@@ -141,12 +141,10 @@ const preventPasteNegative = (e) => {
             <tr>
               <td colspan={2}>
                 <p>
-                  <p class="textstuff">Generate random number of sections in range (1-1000)</p>
-                    <button id="submit" disabled={isSubmitted} onClick={() => onClick()}>
-                      generate{" "}
-                    </button>
-                    <button id="clear" disabled={!isSubmitted} onClick={() => onClear()}>
-                      reset
+                  <p className="textstuff">Generate random number of sections in range (1-1000)</p>
+          <div  className="buttons">
+                    <button   onClick={() => onClick()}>
+                      Generate{" "}
                     </button>
                     <input
                       placeholder="0"
@@ -154,31 +152,25 @@ const preventPasteNegative = (e) => {
                       type="number"
                       id="number"
                       min="1"
-                      step="1"
-                      value={input && Math.max(0, input)}
+                      value={input && Math.max(1, input)}
                       onChange={(e) => onChange(e)}
-                      disabled={isSubmitted}
                       onKeyPress={(e) => preventMinus(e)}
                       onPaste={(e) => preventPasteNegative(e)}
-                    />
+                      />
+                      </div>
               </p>
           </td>
         </tr>
       </table>
-      </div>
-      </div>
-      <div id="textinput" className="generated">
         {displayText && (
           <TextareaAutosize
-            // className="generated"
-            id="textinput"
-            rows="15"
-            // cols="120"
-            value={displayText}
+          id="responsive"
+          className="textinput"          
+          value={displayText}
           />
-        )}
-      </div>
-      
+          )}
+          </div>
+    </div> 
     </div>
   );
 }
