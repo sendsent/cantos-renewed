@@ -97,7 +97,7 @@ input {
   height: auto;
   max-height: 300000px;
   font-family: "Times";
-  overflow: hidden;
+  /* overflow: hidden; */
 
 }
 
