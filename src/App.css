@@ -93,9 +93,9 @@ input {
   font-size: medium;
   border: none;
   width: 45rem;
-  min-height: 2300px;
+  /* min-height: 2300px; */
   height: auto;
-  max-height: 270000px;
+  max-height: 300000px;
   font-family: "Times";
   overflow: hidden;
 
