@@ -1,5 +1,14 @@
-.App {
-  white-space: pre-wrap;
+
+.imageContainer {
+ max-width: 230px;
+
+ height: 330px;
+}
+.imageContainer img {
+  min-width: 120px;
+  min-height: 220px;
+  width: auto;
+  height: auto;
 }
 
 .innerContainer {
@@ -17,7 +26,6 @@
 .tableContainer {
   display: inline-flex;
     justify-content: flex-start;
-    flex-wrap: nowrap;
     flex-direction: row;
     align-items: flex-start;
 
@@ -26,15 +34,15 @@
   .info {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     flex-wrap: wrap;
     position: relative;
 }
 .buttons {
   margin-top: 1rem;
-  
 }
-
+.buttonContainer {
+  flex-direction: row;
+}
 .invisible {
   display: none;
 }
@@ -47,13 +55,17 @@ table.center {
   border-spacing: 0;
   
 }
+.imageContainer {
+  display: flex;
+  
+}
  img {
   float: left;
   padding-top: 0px;
   padding-right: 10px;
   padding-bottom: 0px;
   padding-left: 0px;
-  width: 20%;
+  ;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -61,8 +73,12 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
+input button{
+  font-size: medium
+  
+}
 input {
-  width: 2.5rem;
+  width: 4em
 }
 .textstuff {
   color: rgb(0, 0, 0);
@@ -73,8 +89,10 @@ input {
 
 
 .textinput {
+  display:flex;
+  font-size: medium;
   border: none;
-  width: 65rem;
+  width: 45rem;
   min-height: 2300px;
   height: auto;
   max-height: 270000px;
@@ -83,31 +101,51 @@ input {
 
 }
 
-@media only screen and (min-width: 200px) and (max-width: 312px) {
-  img {
-    width: 15%
+@media only screen and (min-width: 200px) and (max-width: 425px) {
+ 
+  .intro {
+    width: 100vw;
   }
-  
+  .buttonContainer {
+    font-size: x-small;
+  }
   .textstuff {
-    font-size: xx-small; 
-} 
+    font-size: small;
+  }
+  .tableContainer {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
   .textinput {
-    display: flex;
-    flex: none;
-    font-size: .5ch;
+    width: 55rem;
+    font-size: 2mm; 
+} 
+  
+}
+@media only screen  and (min-width: 425px) and (max-width: 568px ) {
+  .buttonContainer {
+    font-size: x-small;
   }
-  .buttons {
-    display: flex;
+  .tableContainer {
+    flex-direction: column;
+    flex-wrap: wrap;
   }
-  button, input {
-    font-size: 1ch;
+  .intro {
+    width: 100vw;
   }
-  input {
-    width: 1.5rem;
+  .textstuff {
+    font-size: x-small; 
+  }
+  button input {
+    font-size: xx-small;
+  }
+  .textinput {
+    width: 55rem;
+    font-size: xx-small;
   }
 }
 
-@media only screen  and (min-width: 312px) and (max-width: 768px ) {
+@media only screen  and (min-width: 568px) and (max-width: 768px ) {
   
   .textstuff {
     font-size: small; 
@@ -115,17 +153,12 @@ input {
   
   .textinput {
     display: flex;
-    font-size: .75ch;
+    font-size: small
   }
   .buttons {
     display: flex;
   }
-  button, input {
-    font-size: 1ch;
-  }
-  input {
-    width: 1.5rem;
-  }
+  
   
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px){
@@ -136,23 +169,47 @@ input {
   .intro {
     font-size: small;
   }
-  input {
-    width: 3.5rem
-  }
+  
 }
-
-@media screen and (min-width: 1440px) and (max-width: 2560px) {
+@media only screen and (min-width: 1440px) {
   .outerContainer {
     margin-top: 1rem;
     margin-left: 1rem;
   }
 .textstuff {
-  font-size: larger;
+  font-size: large;
 }
-  .textinput {
-    font-size: 5mm;
+.buttonContainer {
+  font-size: large;
+}
+.imageContainer {
+  max-width: unset;
+  height: unset; 
+  width: 45%
+}
+.imageContainer img {
+  width: 100%;
+}
+}
+  
+@media only screen and  (min-width: 2560px) {
+  .outerContainer {
+    margin-top: 1rem;
+    margin-left: 1rem;
   }
-  img {
-    width: 35%;
-  }
+.textstuff {
+  font-size: xx-large;
+}
+.imageContainer {
+  max-width: unset;
+  height: unset; 
+  width: 55%
+}
+.imageContainer img {
+  width: 100%;
+}
+.buttonContainer {
+  font-size: x-large;
+}
+ 
 }

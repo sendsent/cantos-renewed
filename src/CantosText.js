@@ -46,9 +46,10 @@ function CantosText() {
     const invalidChars = [
       "-",
       "+",
+      ".",
       "e",
-      "."
     ];
+    
     if (invalidChars.includes(e.key)) {
         e.preventDefault();
       }
@@ -56,6 +57,8 @@ function CantosText() {
     if (e.code === 'Minus' ) {
         e.preventDefault();
     }
+  
+    
 };
 const preventPasteNegative = (e) => {
   const clipboardData = e.clipboardData || window.clipboardData;
@@ -67,8 +70,8 @@ const preventPasteNegative = (e) => {
 };
 
   const onChange = (e) => {
-    const strNumber = e.target.value;
-    setInput(e.target.value ? Number(e.target.value) : e.target.value.replace(/^0+/, ''));
+    const strNumber = e.target.value.replace(/^0+/, "");
+    setInput(e.target.value ? Number(strNumber) : e.target.value.replace(/^0+/, ''));
     setIsClear(false);
   };
 
@@ -106,8 +109,9 @@ const preventPasteNegative = (e) => {
     <div className="App outerContainer">
       <div className="innerContainer">
         <div className="tableContainer">
-
-          <img src="https://images-na.ssl-images-amazon.com/images/I/41S5Q3AE70L.jpg"/>
+        <div className="imageContainer"> 
+          <img   src="https://images-na.ssl-images-amazon.com/images/I/41S5Q3AE70L.jpg"/>
+          </div>
         <table className="center">
           <div className="textstuff">
             <tr>
@@ -139,10 +143,10 @@ const preventPasteNegative = (e) => {
               <td colspan={2}>
                 <p>
                   <p className="textstuff">Generate random number of sections in range (1-1000)</p>
+                  <div className="buttonContainer">
                     <button   onClick={() => onClick()}>
                       Generate{" "}
                     </button>
-                  
                     <input
                       placeholder="0"
                       ref={inputRef}
@@ -153,7 +157,8 @@ const preventPasteNegative = (e) => {
                       onChange={(e) => onChange(e)}
                       onKeyPress={(e) => preventMinus(e)}
                       onPaste={(e) => preventPasteNegative(e)}
-                    />
+                      />
+                  </div>
                 </p>
             </td>
           </tr>
