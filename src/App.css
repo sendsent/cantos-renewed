@@ -1,90 +1,215 @@
-.App {
-  /* text-align: center; */
-  white-space: pre-wrap;
-}
-.generated {
-  padding-top: 20
-}
-@media screen and (min-width: 320px ) and (max-width: 768px ) {
-  .generated {
-    padding-left: 40px;
 
-  }
-  .generatedouter {
-    margin-left: 4rem
-  }
-  #textinput {
-    margin-left: 20px
+.imageContainer {
+ max-width: 230px;
 
-  }
+ height: 330px;
 }
-@media screen and (min-width: 1024px) {
-  .generatedouter {
-    margin-left: 14.5rem
-  }
-  .generated {
-    padding-left: 70;
-  }
-}
-.responsive {
-  max-width: 75%;
+.imageContainer img {
+  min-width: 120px;
+  min-height: 220px;
+  width: auto;
   height: auto;
+}
+
+.innerContainer {
+  display: inline-flex;
+    width: auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    padding-left: 1rem;
+}
+.outerContainer {
+ 
+  position: relative;
+}
+.tableContainer {
+  display: inline-flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: flex-start;
+
+}
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+}
+.buttons {
+  margin-top: 1rem;
+}
+.buttonContainer {
+  flex-direction: row;
 }
 .invisible {
   display: none;
 }
 
 table.center {
+  display: flex;
   margin-left: auto;
   margin-right: auto;
   padding: 0;
   border-spacing: 0;
-  width: 53rem;
-}
-/*.regular {
-  color: rgb(218, 60, 100);
   
-}*/
-
+}
+.imageContainer {
+  display: flex;
+  
+}
  img {
   float: left;
   padding-top: 0px;
   padding-right: 10px;
   padding-bottom: 0px;
   padding-left: 0px;
-  width: 25%;
+  ;
 }
 
-/* .file {
-  margin-top: 24px;
-  font-weight: bold;
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
-*/
-#number {
-  width: 55px;
-}  
-
-/*.text {
-  border-style: solid;
-  border-width: 1px;
-  padding: 20px;
-  font-size: 16px;
+input button{
+  font-size: medium
+  
 }
-*/
-
+input {
+  width: 4em
+}
 .textstuff {
   color: rgb(0, 0, 0);
   margin-left: 5px;
   font-family: "Times";
-  padding-top: 5px;
-  font-size: 16px;
-  /*overflow: scroll;*/
-  /*font-family: "Times", Times, serif;*/
-
+  font-size: large;
  }
 
- #textinput {
-   width: 65vw;
-   margin-left: 165px;
-   font-family: "Times";
- }
+
+.textinput {
+  display:flex;
+  font-size: medium;
+  border: none;
+  width: 45rem;
+  min-height: 2300px;
+  height: auto;
+  max-height: 270000px;
+  font-family: "Times";
+  overflow: hidden;
+
+}
+
+@media only screen and (min-width: 200px) and (max-width: 425px) {
+ 
+  .intro {
+    width: 100vw;
+  }
+  .buttonContainer {
+    font-size: x-small;
+  }
+  .textstuff {
+    font-size: small;
+  }
+  .tableContainer {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .textinput {
+    width: 55rem;
+    font-size: 2mm; 
+} 
+  
+}
+@media only screen  and (min-width: 425px) and (max-width: 568px ) {
+  .buttonContainer {
+    font-size: x-small;
+  }
+  .tableContainer {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .intro {
+    width: 100vw;
+  }
+  .textstuff {
+    font-size: x-small; 
+  }
+  button input {
+    font-size: xx-small;
+  }
+  .textinput {
+    width: 55rem;
+    font-size: xx-small;
+  }
+}
+
+@media only screen  and (min-width: 568px) and (max-width: 768px ) {
+  
+  .textstuff {
+    font-size: small; 
+  }
+  
+  .textinput {
+    display: flex;
+    font-size: small
+  }
+  .buttons {
+    display: flex;
+  }
+  
+  
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+  
+  .textstuff {
+    font-size: medium;
+  }
+  .intro {
+    font-size: small;
+  }
+  
+}
+@media only screen and (min-width: 1440px) {
+  .outerContainer {
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+.textstuff {
+  font-size: large;
+}
+.buttonContainer {
+  font-size: large;
+}
+.imageContainer {
+  max-width: unset;
+  height: unset; 
+  width: 45%
+}
+.imageContainer img {
+  width: 100%;
+}
+}
+  
+@media only screen and  (min-width: 2560px) {
+  .outerContainer {
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+.textstuff {
+  font-size: xx-large;
+}
+.imageContainer {
+  max-width: unset;
+  height: unset; 
+  width: 55%
+}
+.imageContainer img {
+  width: 100%;
+}
+.buttonContainer {
+  font-size: x-large;
+}
+ 
+}

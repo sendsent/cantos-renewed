@@ -11,32 +11,12 @@ function CantosText() {
   const { cantosText, cantosIndex, cantoStore } = state;
   const dispatch = useContext(DispatchContext);
   const [cantos, setCantos] = useState();
-  const [input, setInput] = useState(0);
+  const [input, setInput] = useState();
   const [isClear, setIsClear] = useState(true);
   const [displayText, setDisplayText] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const inputRef = useRef(null);
  
-
-//   const alertMsg = (type) => { 
-//     switch (type) {
-//       case 'low': {
-//      return window.alert('Please enter a number larger than 0.')
-//       }   
-//       case 'high': {
-//         return window.alert('The maximum amount is 1000. Please enter a number between 1 and 1000.')
-//       }
-//       default: {
-//         return window.alert('There was an error.  Please reset and try again')
-//       }
-//   }
-// }
-  // const onClear = () => {
-  //   setInput(0);
-  //   setDisplayText("");
-  //   setIsClear(true);
-  //   setIsSubmitted(false);
-  // };
 
   const onClear = () => {
     setInput("");
@@ -63,9 +43,22 @@ function CantosText() {
 }
  
   const preventMinus = (e) => {
-    if (e.code === 'Minus' || e.target.value === 0) {
+    const invalidChars = [
+      "-",
+      "+",
+      ".",
+      "e",
+    ];
+    
+    if (invalidChars.includes(e.key)) {
+        e.preventDefault();
+      }
+    
+    if (e.code === 'Minus' ) {
         e.preventDefault();
     }
+  
+    
 };
 const preventPasteNegative = (e) => {
   const clipboardData = e.clipboardData || window.clipboardData;
@@ -77,15 +70,12 @@ const preventPasteNegative = (e) => {
 };
 
   const onChange = (e) => {
-   
-    setInput(e.target.value ? Number(e.target.value) : e.target.value);
+    const strNumber = e.target.value.replace(/^0+/, "");
+    setInput(e.target.value ? Number(strNumber) : e.target.value.replace(/^0+/, ''));
     setIsClear(false);
   };
 
-  // const onChange = (e) => {
-  //   setInput(e.target.value);
-  //   setIsClear(false);
-  // };
+  
  
   const onClick = () => {
     setIsSubmitted(true);
@@ -106,7 +96,7 @@ const preventPasteNegative = (e) => {
   useEffect(() => {
     if (isClear) {
       inputRef.current.focus();
-    }
+    } 
   }, [isClear]);
 
   useEffect(() => {
@@ -116,37 +106,46 @@ const preventPasteNegative = (e) => {
   }, [cantoStore]);
 
   return (
-    <div className="App responsive">
-      <div className="outerContainer">
-      <div className="container">
+    <div className="App outerContainer">
+      <div className="innerContainer">
+        <div className="tableContainer">
+        <div className="imageContainer"> 
+          <img   src="https://images-na.ssl-images-amazon.com/images/I/41S5Q3AE70L.jpg"/>
+          </div>
         <table className="center">
           <div className="textstuff">
             <tr>
               <td colspan={2}>
-                <img src="https://images-na.ssl-images-amazon.com/images/I/41S5Q3AE70L.jpg"/>
-                  <i>The Totality Cantos</i><br/>
-                    Brian Ang<br/>
-                    Atelos, 2021<br/>
-                      <br/>
-                      <a href="">pdf</a> <a href="">print</a><br/>
-                      <br/>
-                        The 2008 economic crisis and global backdrop of struggles by 2011 renewed possibilities for thinking totality, materializing it for apprehension. I wrote <i>The Totality Cantos</i> from the desire to be interested in everything, sampling from discourses of history, philosophy, religion, science, and the humanities, knowledges of what constitute totality. Assemblage poetics, constructive verse, writing adequate to apprehending totality.<br/>
-                      <br/>
-                        <i>The Totality Cantos</i> is Brian Ang’s first book. totalitycantos@gmail.com<br/>
-                      <br/>
-                        <i>The Totality Cantos</i> generator randomizes assemblages of the poem’s one thousand sections. Programming by Alif Aleph Sajan & Franz Fernando.<br/>
+              <div className="info" >
+                <div className="author">
+                <i>The Totality Cantos</i><br/>
+                  Brian Ang<br/>
+                  Atelos, 2021<br/>
+                    <br/>
+                    <a href="">pdf</a> <a href="">print</a><br/>
+                    <br/>
+                </div>
+                <div className="intro">
+                      The 2008 economic crisis and global backdrop of struggles by 2011 renewed possibilities for thinking totality, materializing it for apprehension. I wrote <i>The Totality Cantos</i> from the desire to be interested in everything, sampling from discourses of history, philosophy, religion, science, and the humanities, knowledges of what constitute totality. Assemblage poetics, constructive verse, writing adequate to apprehending totality.<br/>
+                    <br/>
+                    <br/>
+                      <i>The Totality Cantos</i> is Brian Ang’s first book. totalitycantos@gmail.com<br/>
+                  <i>The Totality Cantos</i> generator randomizes assemblages of the poem’s one thousand sections. Programming by Alif Aleph Sajan & Franz Fernando.<br/>
+                </div>
+                </div>
               </td>
             </tr>
           </div>
+        </table>
+        </div>
+          <div  className="buttons">
             <tr>
               <td colspan={2}>
                 <p>
-                  <p class="textstuff">Generate random number of sections in range (1-1000)</p>
-                    <button id="submit" disabled={isSubmitted} onClick={() => onClick()}>
-                      generate{" "}
-                    </button>
-                    <button id="clear" disabled={!isSubmitted} onClick={() => onClear()}>
-                      reset
+                  <p className="textstuff">Generate random number of sections in range (1-1000)</p>
+                  <div className="buttonContainer">
+                    <button   onClick={() => onClick()}>
+                      Generate{" "}
                     </button>
                     <input
                       placeholder="0"
@@ -154,31 +153,23 @@ const preventPasteNegative = (e) => {
                       type="number"
                       id="number"
                       min="1"
-                      step="1"
-                      value={input && Math.max(0, input)}
+                      value={input && Math.max(1, input)}
                       onChange={(e) => onChange(e)}
-                      disabled={isSubmitted}
                       onKeyPress={(e) => preventMinus(e)}
                       onPaste={(e) => preventPasteNegative(e)}
-                    />
-              </p>
-          </td>
-        </tr>
-      </table>
-      </div>
-      </div>
-      <div id="textinput" className="generated">
+                      />
+                  </div>
+                </p>
+            </td>
+          </tr>
+        </div>
         {displayText && (
           <TextareaAutosize
-            // className="generated"
-            id="textinput"
-            rows="15"
-            // cols="120"
-            value={displayText}
+          className="textinput"          
+          value={displayText}
           />
         )}
-      </div>
-      
+        </div>
     </div>
   );
 }
