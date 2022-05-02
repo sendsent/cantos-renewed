@@ -1,7 +1,11 @@
 .list {
   display: flex;
+  width: 98vw;
+  justify-content: flex-start;
+  align-self: start;
 }
 input.indexList {
+  flex: 0;
   align-self: flex-start;
   border: none;
   font-size: medium;
@@ -99,10 +103,10 @@ input {
 
 
 .textinput {
-  display:flex;
+  /* display:flex; */
   font-size: medium;
   border: none;
-  width: 100vw;
+  width: 100%;
   /* min-height: 2300px; */
   /* height: auto; */
   max-height: 270000px;
@@ -112,9 +116,7 @@ input {
   /* margin-bottom: .5px; */
 
 }
-.textinput {
-  display: inline-flex;
-}
+
 .textOutput {
   display: flex; 
   flex-direction: column;
@@ -124,7 +126,9 @@ input {
 
 @media only screen and (min-width: 200px) and (max-width: 425px) {
   
-  
+  .intro {
+    width: 100vw;
+  }
   .buttonContainer {
     font-size: x-small;
   }
@@ -136,10 +140,11 @@ input {
     flex-wrap: wrap;
   }
   .textinput {
-    font-size: 2mm; 
+    width: 100vw;
+    font-size: 1.6mm; 
 } 
 input.indexList {
-  font-size: 2mm;
+  font-size: 1.7mm;
 }
 
 }
