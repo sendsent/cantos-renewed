@@ -28,11 +28,12 @@ input.indexList {
     /* flex-wrap: nowrap; */
     flex-direction: row;
     align-items: flex-start;
+    align-self: start;
 
 }
 
   .info {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     /* justify-content: center; */
     flex-wrap: wrap;
