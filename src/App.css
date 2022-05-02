@@ -1,5 +1,7 @@
 .list {
+
   display: flex;
+  flex: 0 0 auto;
   width: 98vw;
   justify-content: flex-start;
   align-self: start;
