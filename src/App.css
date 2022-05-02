@@ -1,6 +1,6 @@
-/* .list {
+.list {
   display: flex;
-} */
+}
 input.indexList {
   align-self: flex-start;
   border: none;
