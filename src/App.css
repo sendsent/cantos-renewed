@@ -1,16 +1,15 @@
-
-.imageContainer {
- max-width: 230px;
-
- height: 330px;
+.list {
+  display: flex;
 }
-.imageContainer img {
-  min-width: 120px;
-  min-height: 220px;
-  width: auto;
-  height: auto;
+input.indexList {
+  align-self: flex-start;
+  border: none;
+  font-size: medium;
+ 
 }
-
+.sectionText {
+  border: none;
+}
 .innerContainer {
   display: inline-flex;
     width: auto;
@@ -20,12 +19,13 @@
     padding-left: 1rem;
 }
 .outerContainer {
- 
+  margin-top: 1rem;
   position: relative;
 }
 .tableContainer {
   display: inline-flex;
     justify-content: flex-start;
+    /* flex-wrap: nowrap; */
     flex-direction: row;
     align-items: flex-start;
 
@@ -34,6 +34,7 @@
   .info {
     display: flex;
     flex-direction: column;
+    /* justify-content: center; */
     flex-wrap: wrap;
     position: relative;
 }
@@ -57,15 +58,22 @@ table.center {
 }
 .imageContainer {
   display: flex;
-  
+  max-width: 230px;
+  height: 330px;
 }
- img {
-  float: left;
-  padding-top: 0px;
-  padding-right: 10px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  ;
+img {
+ float: left;
+ padding-top: 0px;
+ padding-right: 10px;
+ padding-bottom: 0px;
+ padding-left: 0px;
+ ;
+}
+.imageContainer img {
+  min-width: 120px;
+  min-height: 220px;
+  width: auto;
+  height: auto;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -84,6 +92,7 @@ input {
   color: rgb(0, 0, 0);
   margin-left: 5px;
   font-family: "Times";
+  flex-wrap:wrap;
   font-size: large;
  }
 
@@ -94,16 +103,26 @@ input {
   border: none;
   width: 45rem;
   /* min-height: 2300px; */
-  height: auto;
-  max-height: 300000px;
+  /* height: auto; */
+  max-height: 270000px;
   font-family: "Times";
   overflow: hidden;
-  margin-bottom: 60rem;
+  resize: none;
+  /* margin-bottom: .5px; */
 
 }
+.textinput {
+  display: inline-flex;
+}
+.textOutput {
+  display: flex; 
+  flex-direction: column;
+  margin-bottom: 100rem;
+}
+
 
 @media only screen and (min-width: 200px) and (max-width: 425px) {
- 
+  
   .intro {
     width: 100vw;
   }
@@ -119,11 +138,15 @@ input {
   }
   .textinput {
     width: 55rem;
-    font-size: 1.8mm; 
+    font-size: 2mm; 
 } 
-  
+input.indexList {
+  font-size: 2mm;
+}
+
 }
 @media only screen  and (min-width: 425px) and (max-width: 568px ) {
+  
   .buttonContainer {
     font-size: x-small;
   }
@@ -144,6 +167,9 @@ input {
     width: 55rem;
     font-size: xx-small;
   }
+  input.indexList {
+    font-size: xx-small;
+  }
 }
 
 @media only screen  and (min-width: 568px) and (max-width: 768px ) {
@@ -151,28 +177,43 @@ input {
   .textstuff {
     font-size: small; 
   }
-  
+  .intro {
+    width: 100vw;
+  }
   .textinput {
     display: flex;
     font-size: small
   }
+  input.indexList {
+    font-size: small;
+  }
   .buttons {
     display: flex;
   }
-  
-  
+
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px){
   
+  .author {
+    font-size: small;
+  }
+ 
   .textstuff {
+    font-size: medium;
+  }
+  .textinput {
+    font-size: small;
+  }
+  input.indexList {
     font-size: small;
   }
   .intro {
     font-size: small;
+    width: 100vw
   }
   
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1440px) and (max-width: 2560px) {
   .outerContainer {
     margin-top: 1rem;
     margin-left: 1rem;
@@ -183,17 +224,15 @@ input {
 .buttonContainer {
   font-size: large;
 }
-.imageContainer {
-  max-width: unset;
-  height: unset; 
-  width: 45%
-}
-.imageContainer img {
-  width: 100%;
+
+.intro {
+  font-size: large;
+  width: 100vw;
 }
 }
   
 @media only screen and  (min-width: 2560px) {
+  
   .outerContainer {
     margin-top: 1rem;
     margin-left: 1rem;
@@ -201,16 +240,35 @@ input {
 .textstuff {
   font-size: xx-large;
 }
-.imageContainer {
-  max-width: unset;
-  height: unset; 
-  width: 55%
-}
-.imageContainer img {
-  width: 100%;
-}
+
 .buttonContainer {
   font-size: x-large;
 }
+  
+  .textinput {
+    font-size: x-large;
+    width: 100vw;
+  }
+  input.indexList {
+    font-size: x-large;
+  }
+ .intro {
+   display: flex;
+   flex-wrap: wrap;
+
+   font-size: xx-large;
+   width: 90vw
+ }
+ .imageContainer {
+  max-width: unset;
+  height: unset;
+   
+ }
+ .imageContainer img {
+  min-width: unset;
+  min-height: unset;
+  width: 500px;
+  height: auto;
+ }
  
 }

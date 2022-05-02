@@ -13,26 +13,18 @@ import { Context } from "./ContextState";
 export const cantosReducer = (draft, action) => {
   switch (action.type) {
     case "cantos_text": {
+      const cantoStore = formatCantos(action.payload.text, action.payload.input).sortCantosSections()
         draft.cantosText = action.payload.text
-        draft.cantoStore = formatCantos(action.payload.text, action.payload.input).sortCantosSections(
-           );
-        const cantoStore = formatCantos(action.payload.text, action.payload.input).sortCantosSections(
-      )
+        draft.cantoStore = formatCantos(action.payload.text, action.payload.input).sortCantosSections();
    
-      draft.cantosText = action.payload.text;
-    //   draft.cantosIndex = formatCantos(action.payload.text, action.payload.input).sortCantosSections().countArr
-      draft.cantosSorted = cantoStore.secondRun
-      draft.cantosLineValues = cantoStore.lineValues
-      return;
-    }
+        draft.cantosSorted = cantoStore.secondRun
+        draft.cantosLineValues = cantoStore.lineValues
+        draft.cantosIndexes = cantoStore.indexes
+        draft.cantosSectionText = cantoStore.sectionTextArr
+        return;
+      }
     case "resize_canto": {
-    
-    
-      draft.output = formatCantos(action.payload.text, action.payload.input).sortCantosSections(
-      
-       ).output;
-    
-    
+      draft.output = formatCantos(action.payload.text, action.payload.input).sortCantosSections().output;
       return;
     }
   }
@@ -50,6 +42,8 @@ export const CantoContext = ({ children }) => {
     cantosLineValues: "",
     cantoStore:"",
     output: "",
+    cantosIndexes: "",
+    cantosSectionText: "",
    
     
   };

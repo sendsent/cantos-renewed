@@ -296,34 +296,36 @@ function formatCantos(text, size) {
         ...getWordsAndMargins(index[0], index[1]).counts,
       };
     }
-    // console.log("reversedCounts", reversedCounts);
-    // console.log("counts", countArr);
-    // console.log("rearranged", rearranged);
-    // console.log("conflictIndexes", conflictIndexes);
-
+  
     //sort the the canto sections twice and check for conflicts
     const rearranged = findConflicts(lineValues);
     // conflictIndexes = [];
     const secondRun = findConflicts(rearranged);
-    // if (conflictIndexes.length) {
-    //   findConflicts(secondRun)
-    // }
+   
     let sizedArr = secondRun.slice(0, size)
     let finalArr = [];
-
-    // if(size === 1) {
-    //  console.log("rearranged", rearranged)
-    //  let values = sizedArr[0].section.split("-")
-    //  finalArr = [...finalArr, displayIndexSection(values[0], values[1])] // changed from values[1]).join("/n") to remove line after each section
-    //   return finalArr
-    // } else { 
+    let sectionArr= [];
+    let sectionObj ={};
+  
+    let values= []
+    let indexes = sizedArr.map(({ section }) => {
+      return section;
+    }); 
+    sectionArr = sizedArr.map(({ section }) => {
+      let sectionValues = section.split("-");
+      return sectionValues
+    });
+    let sectionTextArr = sectionArr.map(sec => {
+      let newArr =[]
+      newArr = [...newArr, getCantoSection(`${sec[0]}`, `${sec[1]}`).replace(/^\s*\n/gm, "")]
+      return newArr
+    })
     sizedArr.map(({ section }) => {
-      let values = section.split("-");
+      values = section.split("-");
+      
       finalArr = [...finalArr, displayIndexSection(values[0], values[1])];
       return finalArr;
     });
-  // }
-
      output = finalArr.join("").replace(/^\s*\n/gm, "");
 
     return {
@@ -332,6 +334,9 @@ function formatCantos(text, size) {
       countArr,
       passed,
       rearranged,
+      sectionTextArr,
+      indexes,
+      
       output,
     };
   };

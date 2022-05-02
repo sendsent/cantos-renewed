@@ -9,6 +9,7 @@ function CantosText() {
   const { text, index } = useContext(Context);
   const state = useContext(StateContext);
   const { cantosText, cantosIndex, cantoStore } = state;
+  const { indexes, sectionTextArr } = cantoStore;
   const dispatch = useContext(DispatchContext);
   const [cantos, setCantos] = useState();
   const [input, setInput] = useState();
@@ -17,7 +18,8 @@ function CantosText() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const inputRef = useRef(null);
  
-
+  
+  
   const onClear = () => {
     setInput("");
     setDisplayText("");
@@ -163,12 +165,15 @@ const preventPasteNegative = (e) => {
             </td>
           </tr>
         </div>
-        {displayText && (
-          <TextareaAutosize
-          className="textinput"          
-          value={displayText}
-          />
-        )}
+    <div className="textOutput">
+       {displayText && (
+         indexes.map((cantoIndex, index) => 
+         <div className="list" key={index}>
+           <input className="indexList" disabled={true} value={cantoIndex}/>
+           <TextareaAutosize maxRows={10} className="textinput" value={sectionTextArr[index]}/>
+           </div>)
+         )}
+         </div>
         </div>
     </div>
   );

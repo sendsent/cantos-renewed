@@ -11,18 +11,7 @@ const ContextState = ({children}) => {
     const [index, setIndex] = useState()
     const [text, setText] = useState();
 
-    // useMemo(() => {
-    //   fetch(textFile)
-    //     .then((response) => response.text())
-    //     .then((textContent) => {
-    //       let formattedCantos = formatCantos(textContent)
-    //       setText(textContent);
-    //       setIndex(formattedCantos.cantoIndex)
-    //       // setRandomCantos(formattedCantos.shuffledCantos)
-          
-    //     })
-    // }, [textFile]);
-
+  
     useEffect(() => {
       fetch(textFile)
         .then((response) => response.text())
