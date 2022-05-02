@@ -98,6 +98,7 @@ input {
   max-height: 300000px;
   font-family: "Times";
   overflow: hidden;
+  margin-bottom: 60rem;
 
 }
 
@@ -118,7 +119,7 @@ input {
   }
   .textinput {
     width: 55rem;
-    font-size: 2mm; 
+    font-size: 1.8mm; 
 } 
   
 }
