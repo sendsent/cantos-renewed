@@ -101,7 +101,7 @@ input {
   display:flex;
   font-size: medium;
   border: none;
-  width: 45rem;
+  width: 100vw;
   /* min-height: 2300px; */
   /* height: auto; */
   max-height: 270000px;
@@ -135,7 +135,6 @@ input {
     flex-wrap: wrap;
   }
   .textinput {
-    width: 55rem;
     font-size: 2mm; 
 } 
 input.indexList {
@@ -160,7 +159,6 @@ input.indexList {
     font-size: xx-small;
   }
   .textinput {
-    width: 55rem;
     font-size: xx-small;
   }
   input.indexList {
@@ -175,7 +173,7 @@ input.indexList {
   }
   
   .textinput {
-    display: flex;
+    /* display: flex; */
     font-size: small
   }
   input.indexList {
@@ -240,7 +238,7 @@ input.indexList {
   
   .textinput {
     font-size: x-large;
-    width: 100vw;
+    /* width: 100vw; */
   }
   input.indexList {
     font-size: x-large;
