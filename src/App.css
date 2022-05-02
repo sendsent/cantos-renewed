@@ -123,9 +123,7 @@ input {
 
 @media only screen and (min-width: 200px) and (max-width: 425px) {
   
-  .intro {
-    width: 100vw;
-  }
+  
   .buttonContainer {
     font-size: x-small;
   }
@@ -154,9 +152,7 @@ input.indexList {
     flex-direction: column;
     flex-wrap: wrap;
   }
-  .intro {
-    width: 100vw;
-  }
+  
   .textstuff {
     font-size: x-small; 
   }
@@ -177,9 +173,7 @@ input.indexList {
   .textstuff {
     font-size: small; 
   }
-  .intro {
-    width: 100vw;
-  }
+  
   .textinput {
     display: flex;
     font-size: small
@@ -209,7 +203,7 @@ input.indexList {
   }
   .intro {
     font-size: small;
-    width: 100vw
+    
   }
   
 }
@@ -227,7 +221,6 @@ input.indexList {
 
 .intro {
   font-size: large;
-  width: 100vw;
 }
 }
   
@@ -257,7 +250,6 @@ input.indexList {
    flex-wrap: wrap;
 
    font-size: xx-large;
-   width: 90vw
  }
  .imageContainer {
   max-width: unset;
