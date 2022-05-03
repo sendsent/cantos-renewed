@@ -16,15 +16,17 @@ function CantosText() {
   const [isClear, setIsClear] = useState(true);
   const [displayText, setDisplayText] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [placeHolderValue, setPlaceHolderValue] = useState()
+
   const inputRef = useRef(null);
  
   
   
   const onClear = () => {
     setInput("");
-    setDisplayText("");
+    // setDisplayText("");
     setIsClear(true);
-    setIsSubmitted(false);
+    // setIsSubmitted(false);
   };
 
   const alertMsg = (type) => { 
@@ -72,6 +74,7 @@ const preventPasteNegative = (e) => {
 };
 
   const onChange = (e) => {
+    // setIsSubmitted(false)
     const strNumber = e.target.value.replace(/^0+/, "");
     setInput(e.target.value ? Number(strNumber) : strNumber);
     setIsClear(false);
@@ -81,6 +84,8 @@ const preventPasteNegative = (e) => {
  
   const onClick = () => {
     setIsSubmitted(true);
+    setPlaceHolderValue(input)
+
     if (input <= 0) {
       
       setTimeout(alertMsg('low'), 200)
@@ -97,6 +102,11 @@ const preventPasteNegative = (e) => {
   useEffect(() => {
       inputRef.current.focus();
   }, []);
+  useEffect(() => {
+    if (isSubmitted) {
+      setPlaceHolderValue(input)
+    }
+  }, [isSubmitted])
 
   // useEffect(() => {
   //   if (cantoStore && input > 0) {
@@ -147,11 +157,12 @@ const preventPasteNegative = (e) => {
                       Generate{" "}
                     </button>
                     <input
-                      placeholder="0"
+                      placeholder={placeHolderValue}
                       ref={inputRef}
                       type="number"
                       id="number"
                       min="1"
+                      onClick={(e) => { isSubmitted ? onClear(e) : setPlaceHolderValue("")}}
                       value={input && Math.max(1, input)}
                       onChange={(e) => onChange(e)}
                       onKeyPress={(e) => preventMinus(e)}

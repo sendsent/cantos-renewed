@@ -95,6 +95,9 @@ input button{
 input {
   width: 4em
 }
+input:disabled {
+  background: none;
+}
 .textstuff {
   color: rgb(0, 0, 0);
   margin-left: 5px;
@@ -144,10 +147,14 @@ input {
   }
   .textinput {
     width: 100vw;
-    font-size: 1.6mm; 
+    font-size: 1.6mm;
+    padding-top: 1px;
+    margin-bottom: -4px;; 
 } 
+
 input.indexList {
-  font-size: 1.7mm;
+  padding-top: 2px;
+  font-size: 1.2mm;
 }
 
 }
@@ -172,7 +179,7 @@ input.indexList {
     font-size: .35em;
   }
   input.indexList {
-    font-size: xx-small;
+    font-size: .35em;
   }
 }
 
