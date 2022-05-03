@@ -170,7 +170,7 @@ const preventPasteNegative = (e) => {
          indexes.map((cantoIndex, index) => 
          <div className="list" key={index}>
            <input className="indexList" disabled={true} value={cantoIndex}/>
-           <TextareaAutosize maxRows={10} className="textinput" value={sectionTextArr[index]}/>
+           <TextareaAutosize spellcheck="false" maxRows={10} className="textinput" value={sectionTextArr[index]}/>
            </div>)
          )}
          </div>
