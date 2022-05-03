@@ -178,6 +178,8 @@ input.indexList {
   }
   .textinput {
     font-size: .35em;
+    margin-bottom: .6px;
+
   }
   input.indexList {
     font-size: .35em;
@@ -192,7 +194,8 @@ input.indexList {
   
   .textinput {
     /* display: flex; */
-    font-size: small
+    font-size: small;
+    margin-bottom: -8px;
   }
   input.indexList {
     font-size: small;
