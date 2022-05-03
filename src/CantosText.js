@@ -163,7 +163,7 @@ const preventPasteNegative = (e) => {
           </tr>
         </div>
     <div className="textOutput">
-       {displayText && (
+       {isSubmitted && (
          indexes.map((cantoIndex, index) => 
          <div className="list" key={index}>
            <input className="indexList" disabled={true} value={cantoIndex}/>
