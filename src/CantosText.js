@@ -73,7 +73,7 @@ const preventPasteNegative = (e) => {
 
   const onChange = (e) => {
     const strNumber = e.target.value.replace(/^0+/, "");
-    setInput(e.target.value ? Number(strNumber) : e.target.value.replace(/^0+/, ''));
+    setInput(e.target.value ? Number(strNumber) : strNumber);
     setIsClear(false);
   };
 
@@ -88,24 +88,21 @@ const preventPasteNegative = (e) => {
     if (input > 1000) {
       setTimeout(alertMsg('high'), 200)
     }
-    if (input > 0 && input <= 1000){ 
-    
+    if (input > 0 && input <= 1000){   
     dispatch({ type: "cantos_text", payload: { text: text, input: input } });
-    
   };
+  inputRef.current.focus();
 }
 
   useEffect(() => {
-    if (isClear) {
       inputRef.current.focus();
-    } 
-  }, [isClear]);
+  }, []);
 
-  useEffect(() => {
-    if (cantoStore && input > 0) {
-      setDisplayText(cantoStore.output);
-    }
-  }, [cantoStore]);
+  // useEffect(() => {
+  //   if (cantoStore && input > 0) {
+  //     setDisplayText(cantoStore.output);
+  //   }
+  // }, [cantoStore]);
 
   return (
     <div className="App outerContainer">
