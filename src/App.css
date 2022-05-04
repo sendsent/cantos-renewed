@@ -1,16 +1,21 @@
+.list {
 
-.imageContainer {
- max-width: 230px;
-
- height: 330px;
+  display: flex;
+  flex: 0 0 auto;
+  width: 98vw;
+  justify-content: flex-start;
+  align-self: start;
 }
-.imageContainer img {
-  min-width: 120px;
-  min-height: 220px;
-  width: auto;
-  height: auto;
+input.indexList {
+  flex: 0;
+  align-self: flex-start;
+  border: none;
+  font-size: medium;
+ 
 }
-
+.sectionText {
+  border: none;
+}
 .innerContainer {
   display: inline-flex;
     width: auto;
@@ -20,7 +25,7 @@
     padding-left: 1rem;
 }
 .outerContainer {
- 
+  margin-top: 1rem;
   position: relative;
 }
 .tableContainer {
@@ -28,17 +33,18 @@
     justify-content: flex-start;
     flex-direction: row;
     align-items: flex-start;
+    align-self: start;
 
 }
 
   .info {
-    display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     position: relative;
 }
 .buttons {
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .buttonContainer {
   flex-direction: row;
@@ -47,7 +53,7 @@
   display: none;
 }
 
-table.center {
+.center {
   display: flex;
   margin-left: auto;
   margin-right: auto;
@@ -57,15 +63,22 @@ table.center {
 }
 .imageContainer {
   display: flex;
-  
+  max-width: 230px;
+  height: 330px;
 }
- img {
-  float: left;
-  padding-top: 0px;
-  padding-right: 10px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  ;
+img {
+ float: left;
+ padding-top: 0px;
+ padding-right: 10px;
+ padding-bottom: 0px;
+ padding-left: 0px;
+ ;
+}
+.imageContainer img {
+  min-width: 120px;
+  min-height: 220px;
+  width: auto;
+  height: auto;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -80,30 +93,40 @@ input button{
 input {
   width: 4em
 }
+input:disabled, textarea:disabled {
+  color: black;
+  background: none;
+}
 .textstuff {
   color: rgb(0, 0, 0);
   margin-left: 5px;
   font-family: "Times";
+  flex-wrap:wrap;
   font-size: large;
  }
 
 
 .textinput {
-  display:flex;
   font-size: medium;
   border: none;
-  width: 45rem;
-  /* min-height: 2300px; */
-  height: auto;
-  max-height: 300000px;
+  width: 100%;
+  max-height: 270000px;
   font-family: "Times";
   overflow: hidden;
-  margin-bottom: 60rem;
-
+  resize: none;
+  padding-top: 1px;
+  margin-bottom: -4px;; 
 }
 
+.textOutput {
+  display: flex; 
+  flex-direction: column;
+  margin-bottom: 100rem;
+}
+
+
 @media only screen and (min-width: 200px) and (max-width: 425px) {
- 
+  
   .intro {
     width: 100vw;
   }
@@ -114,26 +137,33 @@ input {
     font-size: small;
   }
   .tableContainer {
+    align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
   }
   .textinput {
-    width: 55rem;
-    font-size: 1.8mm; 
+    width: 100vw;
+    font-size: 1.6mm;
+   
 } 
-  
+
+input.indexList {
+  padding-top: 2px;
+  font-size: 1.2mm;
+}
+
 }
 @media only screen  and (min-width: 425px) and (max-width: 568px ) {
+  
   .buttonContainer {
     font-size: x-small;
   }
   .tableContainer {
+    align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
   }
-  .intro {
-    width: 100vw;
-  }
+  
   .textstuff {
     font-size: x-small; 
   }
@@ -141,8 +171,12 @@ input {
     font-size: xx-small;
   }
   .textinput {
-    width: 55rem;
-    font-size: xx-small;
+    font-size: .35em;
+    margin-bottom: .6px;
+
+  }
+  input.indexList {
+    font-size: .35em;
   }
 }
 
@@ -153,26 +187,39 @@ input {
   }
   
   .textinput {
-    display: flex;
-    font-size: small
+    font-size: small;
+    margin-bottom: -8px;
+  }
+  input.indexList {
+    font-size: small;
   }
   .buttons {
     display: flex;
   }
-  
-  
+
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px){
   
+  .author {
+    font-size: small;
+  }
+ 
   .textstuff {
+    font-size: medium;
+  }
+  .textinput {
+    font-size: small;
+  }
+  input.indexList {
     font-size: small;
   }
   .intro {
     font-size: small;
+    
   }
   
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1440px) and (max-width: 2560px) {
   .outerContainer {
     margin-top: 1rem;
     margin-left: 1rem;
@@ -183,17 +230,14 @@ input {
 .buttonContainer {
   font-size: large;
 }
-.imageContainer {
-  max-width: unset;
-  height: unset; 
-  width: 45%
-}
-.imageContainer img {
-  width: 100%;
+
+.intro {
+  font-size: large;
 }
 }
   
 @media only screen and  (min-width: 2560px) {
+  
   .outerContainer {
     margin-top: 1rem;
     margin-left: 1rem;
@@ -201,16 +245,33 @@ input {
 .textstuff {
   font-size: xx-large;
 }
-.imageContainer {
-  max-width: unset;
-  height: unset; 
-  width: 55%
-}
-.imageContainer img {
-  width: 100%;
-}
+
 .buttonContainer {
   font-size: x-large;
 }
+  
+  .textinput {
+    font-size: x-large;
+  }
+  input.indexList {
+    font-size: x-large;
+  }
+ .intro {
+   display: flex;
+   flex-wrap: wrap;
+
+   font-size: xx-large;
+ }
+ .imageContainer {
+  max-width: unset;
+  height: unset;
+   
+ }
+ .imageContainer img {
+  min-width: unset;
+  min-height: unset;
+  width: 500px;
+  height: auto;
+ }
  
 }
