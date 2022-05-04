@@ -95,7 +95,8 @@ input button{
 input {
   width: 4em
 }
-input:disabled {
+input:disabled, textarea:disabled {
+  color: black;
   background: none;
 }
 .textstuff {
