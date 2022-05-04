@@ -14,7 +14,7 @@ function CantosText() {
   const [cantos, setCantos] = useState();
   const [input, setInput] = useState();
   const [isClear, setIsClear] = useState(true);
-  const [displayText, setDisplayText] = useState("");
+  // const [displayText, setDisplayText] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [placeHolderValue, setPlaceHolderValue] = useState()
 
@@ -119,19 +119,17 @@ const preventPasteNegative = (e) => {
       <div className="innerContainer">
         <div className="tableContainer">
         <div className="imageContainer"> 
-          <img   src="https://images-na.ssl-images-amazon.com/images/I/41S5Q3AE70L.jpg"/>
+          <img   alt="pic2" src="https://images-na.ssl-images-amazon.com/images/I/41S5Q3AE70L.jpg"/>
           </div>
-        <table className="center">
           <div className="textstuff">
-            <tr>
-              <td colspan={2}>
+        <div className="center">
               <div className="info" >
                 <div className="author">
                 <i>The Totality Cantos</i><br/>
                   Brian Ang<br/>
                   Atelos, 2021<br/>
                     <br/>
-                    <a href="">pdf</a> <a href="">print</a><br/>
+                    <a href="#0">pdf</a> <a href="#0">print</a><br/>
                     <br/>
                 </div>
                 <div className="intro">
@@ -142,17 +140,12 @@ const preventPasteNegative = (e) => {
                   <i>The Totality Cantos</i> generator randomizes assemblages of the poem’s one thousand sections. Programming by Alif Aleph Sajan & Franz Fernando.<br/>
                 </div>
                 </div>
-              </td>
-            </tr>
+        </div>
           </div>
-        </table>
         </div>
           <div  className="buttons">
-            <tr>
-              <td colspan={2}>
-                <p>
-                  <p className="textstuff">Generate random number of sections in range (1-1000)</p>
                   <div className="buttonContainer">
+                  <p className="textstuff">Generate random number of sections in range (1-1000)</p>
                     <button   onClick={() => onClick()}>
                       Generate{" "}
                     </button>
@@ -169,9 +162,6 @@ const preventPasteNegative = (e) => {
                       onPaste={(e) => preventPasteNegative(e)}
                       />
                   </div>
-                </p>
-            </td>
-          </tr>
         </div>
     <div className="textOutput">
        {isSubmitted && (

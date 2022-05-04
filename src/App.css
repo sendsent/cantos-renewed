@@ -31,7 +31,6 @@ input.indexList {
 .tableContainer {
   display: inline-flex;
     justify-content: flex-start;
-    /* flex-wrap: nowrap; */
     flex-direction: row;
     align-items: flex-start;
     align-self: start;
@@ -39,14 +38,13 @@ input.indexList {
 }
 
   .info {
-    /* display: flex; */
     flex-direction: column;
-    /* justify-content: center; */
     flex-wrap: wrap;
     position: relative;
 }
 .buttons {
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .buttonContainer {
   flex-direction: row;
@@ -55,7 +53,7 @@ input.indexList {
   display: none;
 }
 
-table.center {
+.center {
   display: flex;
   margin-left: auto;
   margin-right: auto;
@@ -109,20 +107,15 @@ input:disabled, textarea:disabled {
 
 
 .textinput {
-  /* display:flex; */
   font-size: medium;
   border: none;
   width: 100%;
-  /* min-height: 2300px; */
-  /* height: auto; */
   max-height: 270000px;
   font-family: "Times";
   overflow: hidden;
   resize: none;
   padding-top: 1px;
   margin-bottom: -4px;; 
-  /* margin-bottom: .5px; */
-
 }
 
 .textOutput {
@@ -194,7 +187,6 @@ input.indexList {
   }
   
   .textinput {
-    /* display: flex; */
     font-size: small;
     margin-bottom: -8px;
   }
@@ -260,7 +252,6 @@ input.indexList {
   
   .textinput {
     font-size: x-large;
-    /* width: 100vw; */
   }
   input.indexList {
     font-size: x-large;
