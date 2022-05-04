@@ -1,13 +1,11 @@
-import React,  { useReducer, useEffect, useMemo, useState, useContext, createContext } from 'react';
-import { cantosReducer } from './cantosReducer';
-import App from '../CantosText'
+import React,  { useEffect, useState, createContext } from 'react';
 import textFile from  '../assets/cantos.txt'
 import formatCantos from "./cantoIndex"
 
 export const Context = createContext()
 
 const ContextState = ({children}) => {
-    const [randomCantos, setRandomCantos] = useState()
+    // const [randomCantos, setRandomCantos] = useState()
     const [index, setIndex] = useState()
     const [text, setText] = useState();
 

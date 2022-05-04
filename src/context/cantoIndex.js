@@ -58,10 +58,10 @@ function formatCantos(text, size) {
 
   //separate all the canto headings and section numbers and place each canto section into an array
   const sectionNumberRegex = /\[\d.*\]{1,}/gm;
-  const sectionDelimiter = /.\d.*\r{1,}/gm;
+  // const sectionDelimiter = /.\d.*\r{1,}/gm;
   const sectionText = tokens.join("");
   let sectionTokens = sectionText.split(sectionNumberRegex);
-  const sectionTokenText = sectionTokens.join("");
+  // const sectionTokenText = sectionTokens.join("");
   sectionTokens.splice(0, 1);
 
   //creates an array of arrays of the canto sections to be used as the index.
@@ -78,27 +78,27 @@ function formatCantos(text, size) {
   const getCantoSection = (cantoNumber, cantoSection) => {
     return cantoIndex[cantoNumber - 1][cantoSection - 1];
   };
-  const removeFromIndex = (
-    obj,
-    removeProp,
-    path,
-    action = "",
-    newValue = ""
-  ) => {
-    const { [removeProp]: remove, ...rest } = obj;
-    const removedItem = remove.splice(path, 1)[0];
-    // const modified = {...cantoIndex, rest}
-    return action === "remove" ? removedItem : rest;
-  };
+  // const removeFromIndex = (
+  //   obj,
+  //   removeProp,
+  //   path,
+  //   action = "",
+  //   newValue = ""
+  // ) => {
+  //   const { [removeProp]: remove, ...rest } = obj;
+  //   const removedItem = remove.splice(path, 1)[0];
+  //   // const modified = {...cantoIndex, rest}
+  //   return action === "remove" ? removedItem : rest;
+  // };
 
-  const removeKeys = (obj, keys) =>
-    obj !== Object(obj)
-      ? obj
-      : Array.isArray(obj)
-      ? obj.map((item) => removeKeys(item, keys))
-      : Object.fromEntries(
-          Object.entries(obj).filter(([k]) => !keys.includes(k))
-        );
+  // const removeKeys = (obj, keys) =>
+  //   obj !== Object(obj)
+  //     ? obj
+  //     : Array.isArray(obj)
+  //     ? obj.map((item) => removeKeys(item, keys))
+  //     : Object.fromEntries(
+  //         Object.entries(obj).filter(([k]) => !keys.includes(k))
+  //       );
 
   //display the canto number and section using the function above
   const displayIndexSection = (cantoNumber, cantoSection) => {
@@ -185,8 +185,8 @@ function formatCantos(text, size) {
     firstLine = [firstWords, firstMargins];
     lastLine = [lastWords, lastMargins];
     lines = { section, firstLine, lastLine };
-    let firstLines = {};
-    let lastLines = {};
+    // let firstLines = {};
+    // let lastLines = {};
     sections = [`${cantoNumber}-${cantoSection}`];
     const linesMargins = [...firstLine, ...lastLine];
     counts[section] = linesMargins;
@@ -206,10 +206,10 @@ function formatCantos(text, size) {
   //when a conflict is found between a,b send b to the end of the array and
   //continue comparing
   let conflictIndexes = [];
-  let secondConflicts = [];
+  // let secondConflicts = [];
   const findConflicts = (ar) => {
     let i = 0;
-    let recheck = false;
+    // let recheck = false;
    
     if (ar.length <= 1) {
       return ar;
@@ -305,7 +305,7 @@ function formatCantos(text, size) {
     let sizedArr = secondRun.slice(0, size)
     let finalArr = [];
     let sectionArr= [];
-    let sectionObj ={};
+    // let sectionObj ={};
   
     let values= []
     let indexes = sizedArr.map(({ section }) => {

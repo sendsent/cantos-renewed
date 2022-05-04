@@ -1,13 +1,10 @@
 import React, {
-  useReducer,
-  useEffect,
-  useState,
   useContext,
   createContext,
 } from "react";
 import { useImmerReducer } from "use-immer";
 import formatCantos from "./cantoIndex";
-import { Context } from "./ContextState";
+// import { Context } from "./ContextState";
 
 
 export const cantosReducer = (draft, action) => {
@@ -15,8 +12,7 @@ export const cantosReducer = (draft, action) => {
     case "cantos_text": {
       const cantoStore = formatCantos(action.payload.text, action.payload.input).sortCantosSections()
         draft.cantosText = action.payload.text
-        draft.cantoStore = formatCantos(action.payload.text, action.payload.input).sortCantosSections();
-   
+        draft.cantoStore = formatCantos(action.payload.text, action.payload.input).sortCantosSections(); 
         draft.cantosSorted = cantoStore.secondRun
         draft.cantosLineValues = cantoStore.lineValues
         draft.cantosIndexes = cantoStore.indexes
@@ -25,6 +21,9 @@ export const cantosReducer = (draft, action) => {
       }
     case "resize_canto": {
       draft.output = formatCantos(action.payload.text, action.payload.input).sortCantosSections().output;
+      return;
+    }
+    default: {
       return;
     }
   }

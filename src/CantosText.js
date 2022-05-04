@@ -6,14 +6,14 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 
 function CantosText() {
-  const { text, index } = useContext(Context);
+  const { text } = useContext(Context);
   const state = useContext(StateContext);
-  const { cantosText, cantosIndex, cantoStore } = state;
+  const { cantoStore } = state;
   const { indexes, sectionTextArr } = cantoStore;
   const dispatch = useContext(DispatchContext);
-  const [cantos, setCantos] = useState();
+  // const [cantos, setCantos] = useState();
   const [input, setInput] = useState();
-  const [isClear, setIsClear] = useState(true);
+  // const [isClear, setIsClear] = useState(true);
   // const [displayText, setDisplayText] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [placeHolderValue, setPlaceHolderValue] = useState()
@@ -25,7 +25,7 @@ function CantosText() {
   const onClear = () => {
     setInput("");
     // setDisplayText("");
-    setIsClear(true);
+    // setIsClear(true);
     // setIsSubmitted(false);
   };
 
@@ -77,7 +77,7 @@ const preventPasteNegative = (e) => {
     // setIsSubmitted(false)
     const strNumber = e.target.value.replace(/^0+/, "");
     setInput(e.target.value ? Number(strNumber) : strNumber);
-    setIsClear(false);
+    // setIsClear(false);
   };
 
   
@@ -168,7 +168,7 @@ const preventPasteNegative = (e) => {
          indexes.map((cantoIndex, index) => 
          <div className="list" key={index}>
            <input className="indexList" disabled={true} value={cantoIndex}/>
-           <TextareaAutosize spellCheck="false" disabled="true" maxRows={10} className="textinput" value={sectionTextArr[index]}/>
+           <TextareaAutosize spellCheck="false" disabled={true} maxRows={10} className="textinput" value={sectionTextArr[index]}/>
            </div>)
          )}
          </div>
