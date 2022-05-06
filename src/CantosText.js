@@ -86,7 +86,7 @@ const preventPasteNegative = (e) => {
   
  
   const onClick = () => {
-    setIsSubmitted(true);
+   
     // setPlaceHolderValue(input)
 
     if (input <= 0) {
@@ -97,6 +97,7 @@ const preventPasteNegative = (e) => {
       setTimeout(alertMsg('high'), 200)
     }
     if (input > 0 && input <= 1000){   
+      setIsSubmitted(true);
       dispatch({ 
         type: "cantos_text", 
         payload: { text: text, input: input } 
