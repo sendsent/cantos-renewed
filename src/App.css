@@ -31,7 +31,7 @@ input.indexList {
 .tableContainer {
   display: inline-flex;
     justify-content: flex-start;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
     align-self: start;
 
@@ -136,11 +136,11 @@ input:disabled, textarea:disabled {
   .textstuff {
     font-size: small;
   }
-  .tableContainer {
+  /* .tableContainer {
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-  }
+  } */
   .textinput {
     width: 100vw;
     font-size: 1.6mm;
@@ -158,11 +158,11 @@ input.indexList {
   .buttonContainer {
     font-size: x-small;
   }
-  .tableContainer {
+  /* .tableContainer {
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-  }
+  } */
   
   .textstuff {
     font-size: x-small; 

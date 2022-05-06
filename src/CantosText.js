@@ -13,7 +13,7 @@ function CantosText() {
   const dispatch = useContext(DispatchContext);
   // const [cantos, setCantos] = useState();
   const [input, setInput] = useState();
-  // const [isClear, setIsClear] = useState(true);
+  const [isClear, setIsClear] = useState(true);
   // const [displayText, setDisplayText] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [placeHolderValue, setPlaceHolderValue] = useState()
@@ -24,24 +24,28 @@ function CantosText() {
   
   const onClear = () => {
     setInput("");
-    // setDisplayText("");
-    // setIsClear(true);
-    // setIsSubmitted(false);
+    setIsClear(true);
   };
 
   const alertMsg = (type) => { 
     switch (type) {
       case 'low': {
         onClear()
-     return window.alert('Please enter a number larger than 0.')
+        return window.alert(
+          'Please enter a number larger than 0.'
+          )
       }   
       case 'high': {
          onClear()
-        return window.alert('The maximum amount is 1000. Please enter a number between 1 and 1000.')
+         return window.alert(
+           'The maximum amount is 1000. Please enter a number between 1 and 1000.'
+           )
       }
       default: {
         onClear()
-        return window.alert('There was an error.  Please reset and try again')
+        return window.alert(
+          'There was an error.  Please reset and try again'
+          )
       }
   }
 }
@@ -60,10 +64,9 @@ function CantosText() {
     
     if (e.code === 'Minus' ) {
         e.preventDefault();
-    }
-  
-    
+    } 
 };
+
 const preventPasteNegative = (e) => {
   const clipboardData = e.clipboardData || window.clipboardData;
   const pastedData = parseFloat(clipboardData.getData('text'));
@@ -77,14 +80,14 @@ const preventPasteNegative = (e) => {
     // setIsSubmitted(false)
     const strNumber = e.target.value.replace(/^0+/, "");
     setInput(e.target.value ? Number(strNumber) : strNumber);
-    // setIsClear(false);
+    setIsClear(false);
   };
 
   
  
   const onClick = () => {
     setIsSubmitted(true);
-    setPlaceHolderValue(input)
+    // setPlaceHolderValue(input)
 
     if (input <= 0) {
       
@@ -94,19 +97,24 @@ const preventPasteNegative = (e) => {
       setTimeout(alertMsg('high'), 200)
     }
     if (input > 0 && input <= 1000){   
-    dispatch({ type: "cantos_text", payload: { text: text, input: input } });
+      dispatch({ 
+        type: "cantos_text", 
+        payload: { text: text, input: input } 
+      });
+      setIsClear(true)
   };
   inputRef.current.focus();
 }
 
   useEffect(() => {
+    if (isClear) {
       inputRef.current.focus();
-  }, []);
-  useEffect(() => {
-    if (isSubmitted) {
+      setInput("")
+    } 
+    if (isSubmitted) {  
       setPlaceHolderValue(input)
     }
-  }, [isSubmitted])
+  }, [isClear, isSubmitted])
 
   // useEffect(() => {
   //   if (cantoStore && input > 0) {
@@ -116,8 +124,8 @@ const preventPasteNegative = (e) => {
 
   return (
     <div className="App outerContainer">
-      <div className="innerContainer">
         <div className="tableContainer">
+      {/* <div className="innerContainer">
         <div className="imageContainer"> 
           <img   alt="pic2" src="https://images-na.ssl-images-amazon.com/images/I/41S5Q3AE70L.jpg"/>
           </div>
@@ -140,13 +148,13 @@ const preventPasteNegative = (e) => {
                   <i>The Totality Cantos</i> generator randomizes assemblages of the poem’s one thousand sections. Programming by Alif Aleph Sajan & Franz Fernando.<br/>
                 </div>
                 </div>
-        </div>
+            </div>
           </div>
-        </div>
-          <div  className="buttons">
-                  <div className="buttonContainer">
+        </div> */}
+          <div className="buttons">
+              <div className="buttonContainer">
                   <p className="textstuff">Generate random number of sections in range (1-1000)</p>
-                    <button   onClick={() => onClick()}>
+                    <button onClick={() => onClick()}>
                       Generate{" "}
                     </button>
                     <input
@@ -155,24 +163,35 @@ const preventPasteNegative = (e) => {
                       type="number"
                       id="number"
                       min="1"
-                      onClick={(e) => { isSubmitted ? onClear(e) : setPlaceHolderValue("")}}
+                      onClick={(e) => { 
+                        isSubmitted 
+                        ? onClear(e) 
+                        : setPlaceHolderValue("")
+                      }}
                       value={input && Math.max(1, input)}
                       onChange={(e) => onChange(e)}
                       onKeyPress={(e) => preventMinus(e)}
                       onPaste={(e) => preventPasteNegative(e)}
                       />
-                  </div>
+                </div>
+            </div>
+        <div className="textOutput">
+          {isSubmitted && (
+            indexes.map((cantoIndex, index) => 
+            <div className="list" key={index}>
+              <input className="indexList" disabled={true} value={cantoIndex}/>
+              <TextareaAutosize 
+                spellCheck="false" 
+                disabled={true} 
+                maxRows={10} 
+                className="textinput" 
+                value={sectionTextArr[index]}
+              />
+            </div>
+            )
+          )}
         </div>
-    <div className="textOutput">
-       {isSubmitted && (
-         indexes.map((cantoIndex, index) => 
-         <div className="list" key={index}>
-           <input className="indexList" disabled={true} value={cantoIndex}/>
-           <TextareaAutosize spellCheck="false" disabled={true} maxRows={10} className="textinput" value={sectionTextArr[index]}/>
-           </div>)
-         )}
-         </div>
-        </div>
+      </div>
     </div>
   );
 }
