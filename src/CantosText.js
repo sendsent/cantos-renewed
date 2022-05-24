@@ -124,8 +124,8 @@ const preventPasteNegative = (e) => {
   // }, [cantoStore]);
 
   return (
-    <div className="App outerContainer">
-        <div className="tableContainer center">
+    <div className="App outerContainer center">
+        <div className="tableContainer  ">
       {/* <div className="innerContainer">
         <div className="imageContainer"> 
           <img   alt="pic2" src="https://images-na.ssl-images-amazon.com/images/I/41S5Q3AE70L.jpg"/>
@@ -180,7 +180,7 @@ const preventPasteNegative = (e) => {
                     </button>
                 </div>
             </div>
-        <div className="textOutput">
+        <div className="textOutput center">
           {isSubmitted && (
             indexes.map((cantoIndex, index) => 
             <div className="list" key={index}>
