@@ -125,7 +125,7 @@ const preventPasteNegative = (e) => {
 
   return (
     <div className="App outerContainer">
-        <div className="tableContainer">
+        <div className="tableContainer center">
       {/* <div className="innerContainer">
         <div className="imageContainer"> 
           <img   alt="pic2" src="https://images-na.ssl-images-amazon.com/images/I/41S5Q3AE70L.jpg"/>
@@ -152,12 +152,12 @@ const preventPasteNegative = (e) => {
             </div>
           </div>
         </div> */}
+        <text className="textstuff">
+          The Totality Cantos Generator
+        </text>
           <div className="buttons">
               <div className="buttonContainer">
-                  <p className="textstuff">Generate random number of sections in range (1-1000)</p>
-                    <button onClick={() => onClick()}>
-                      Generate{" "}
-                    </button>
+                  <text style={{marginRight: 5}} className="textstuff">Number of sections (1-1000)</text>
                     <input
                       placeholder={placeHolderValue}
                       ref={inputRef}
@@ -173,7 +173,11 @@ const preventPasteNegative = (e) => {
                       onChange={(e) => onChange(e)}
                       onKeyPress={(e) => preventMinus(e)}
                       onPaste={(e) => preventPasteNegative(e)}
+                      style={{marginRight:5}}
                       />
+                    <button onClick={() => onClick()}>
+                      Generate{" "}
+                    </button>
                 </div>
             </div>
         <div className="textOutput">

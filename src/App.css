@@ -25,7 +25,8 @@ input.indexList {
     padding-left: 1rem;
 }
 .outerContainer {
-  margin-top: 1rem;
+  display: flex;
+  margin: auto;
   position: relative;
 }
 .tableContainer {
@@ -43,7 +44,7 @@ input.indexList {
     position: relative;
 }
 .buttons {
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   margin-bottom: 1rem;
 }
 .buttonContainer {
@@ -99,7 +100,7 @@ input:disabled, textarea:disabled {
 }
 .textstuff {
   color: rgb(0, 0, 0);
-  margin-left: 5px;
+  /* margin-left: 5px; */
   font-family: "Times";
   flex-wrap:wrap;
   font-size: large;
@@ -133,7 +134,7 @@ input:disabled, textarea:disabled {
   .buttonContainer {
     font-size: x-small;
   }
-  .textstuff {
+  .textstuff,text {
     font-size: small;
   }
   /* .tableContainer {
