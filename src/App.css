@@ -25,8 +25,11 @@ input.indexList {
     padding-left: 1rem;
 }
 .outerContainer {
-  margin-top: 1rem;
+  display: flex;
+  margin: auto;
   position: relative;
+  flex-direction: column;
+  align-items: center;
 }
 .tableContainer {
   display: inline-flex;
@@ -43,7 +46,7 @@ input.indexList {
     position: relative;
 }
 .buttons {
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   margin-bottom: 1rem;
 }
 .buttonContainer {
@@ -54,7 +57,7 @@ input.indexList {
 }
 
 .center {
-  display: flex;
+  /* display: flex; */
   margin-left: auto;
   margin-right: auto;
   padding: 0;
@@ -99,7 +102,7 @@ input:disabled, textarea:disabled {
 }
 .textstuff {
   color: rgb(0, 0, 0);
-  margin-left: 5px;
+  /* margin-left: 5px; */
   font-family: "Times";
   flex-wrap:wrap;
   font-size: large;
@@ -133,7 +136,7 @@ input:disabled, textarea:disabled {
   .buttonContainer {
     font-size: x-small;
   }
-  .textstuff {
+  .textstuff,text {
     font-size: small;
   }
   /* .tableContainer {
@@ -199,7 +202,9 @@ input.indexList {
 
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px){
-  
+  .outerContainer {
+    padding-left: 7%;
+  }
   .author {
     font-size: small;
   }
@@ -223,6 +228,7 @@ input.indexList {
   .outerContainer {
     margin-top: 1rem;
     margin-left: 1rem;
+    padding-left: 25%;
   }
 .textstuff {
   font-size: large;
@@ -241,6 +247,7 @@ input.indexList {
   .outerContainer {
     margin-top: 1rem;
     margin-left: 1rem;
+    padding-left: 35%;
   }
 .textstuff {
   font-size: xx-large;
